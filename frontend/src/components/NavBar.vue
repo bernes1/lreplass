@@ -7,6 +7,8 @@
     <ul class="menu menu-horizontal px-1">
       <li><a>IT-Drift</a></li>
       <li><a>IT-Utvikling</a></li>
+      <li><RouterLink to="/">Home</RouterLink></li>
+      <li><RouterLink to="/about">About</RouterLink></li>
     </ul>
   </div>
 </div>
