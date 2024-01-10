@@ -1,11 +1,13 @@
 <script>
 import JobCard from '../components/JobCard.vue'
 import jobListings from '../assets/jobListings.json'
+import Footer from '@/components/Footer.vue';
 
 export default {
   components: {
     JobCard,
-  },
+    Footer
+},
   data() {
     return {
       jobList: jobListings
@@ -36,13 +38,7 @@ export default {
     />
   </div>  
 
-
-  <footer class="footer footer-center p-4 bg-base-300 text-base-content">
-    <aside>
-      <p>Copyright © 2023 - All rights reserved</p>
-    </aside>
-  </footer>
-
+<Footer></Footer>
 </template>
 
 

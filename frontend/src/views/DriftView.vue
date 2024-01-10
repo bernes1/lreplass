@@ -1,10 +1,12 @@
 <script>
 import JobCard from '../components/JobCard.vue'
 import jobListings from '../assets/jobListings.json'
+import Footer from '@/components/Footer.vue';
 export default {
   components: {
     JobCard,
-  },
+    Footer
+},
   data() {
     return {
       jobList: jobListings
@@ -33,4 +35,5 @@ export default {
       :JobAdLink="job.JobAdLink"
     />
     </div>
+    <Footer></Footer>
 </template>
