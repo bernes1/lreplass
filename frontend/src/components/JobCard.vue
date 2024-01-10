@@ -15,7 +15,6 @@
 </template>
 
 <script>
-
 export default {
   props: {
     jobId: Number,
@@ -28,6 +27,4 @@ export default {
     JobAdLink: String
   },
 };
-
-
 </script>

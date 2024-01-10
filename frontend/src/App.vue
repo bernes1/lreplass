@@ -1,22 +1,22 @@
 <script setup>
-import NavBar from './components/NavBar.vue'
-import JobCard from './components/JobCard.vue';
+import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
   <header>
-    <NavBar></NavBar>
-  </header>
-  <main class="md:container md:mx-auto">
-    <div class="flex justify-center flex-col md:flex-row mb-10 mt-10" >
-        <JobCard></JobCard>
-        <JobCard></JobCard>
-        <JobCard></JobCard>
+    <div class="navbar bg-base-100">
+      <div class="flex-1">
+        <a class="btn btn-ghost text-xl">læreplas</a>
+      </div>
+      <div class="flex-none">
+        <ul class="menu menu-horizontal px-1">
+          <li><RouterLink to="/">Home</RouterLink></li>
+          <li><RouterLink to="/drift">IT-Drift</RouterLink></li>
+          <li><RouterLink to="/utvikling">IT-Utvikling</RouterLink></li>
+          <li><RouterLink to="/about">About</RouterLink></li>
+        </ul>
+      </div>
     </div>
-  </main>
-  <footer class="footer footer-center p-4 bg-base-300 text-base-content">
-  <aside>
-    <p>Copyright © 2023 - All rights reserved</p>
-  </aside>
-</footer>
-</template>
+  </header>
+
+<RouterView /></template>
