@@ -1,4 +1,6 @@
 <script setup>
+import Footer from '@/components/Footer.vue';
+
 </script>
 
 <template>
@@ -7,4 +9,5 @@
 <h1>home page</h1>
     </div>
   </main>
+  <Footer></Footer>
 </template>
