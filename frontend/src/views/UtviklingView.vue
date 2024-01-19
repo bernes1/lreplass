@@ -18,8 +18,10 @@ export default {
 
 
 <template>
+  <div class="h-screen">
+  
   <div class="justify-center text-center">
-    <h1 class="font-bold">Dette er it IT-Utvikling</h1>
+    <h1 class="font-bold text-2xl">IT-Utvikling</h1>
   </div>
 
   <div
@@ -39,6 +41,7 @@ export default {
   </div>  
 
 <Footer></Footer>
+</div>
 </template>
 
 
