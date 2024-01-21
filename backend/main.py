@@ -20,10 +20,14 @@ async def root():
 
 
 @app.get("/api/{position}")
-async def read_position():
-    if job.position == "it-utvikloimng":
-        print("hello it-utvikling")
-    return "yeat"
+async def read_position(position: str):
+    if position == "it-utvikling":
+        return "hello it-utvikling"
+    elif position == "it-drift":
+        return "hello it-drift"
+    else: 
+        return "no position spesified"
+
    
 
 
