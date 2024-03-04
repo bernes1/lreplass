@@ -3,6 +3,13 @@ from database import Base
 from schemas import JobSchema
 
 
+class Users(Base):
+    __tablename__ = "users"
+
+    id = Column(Integer, primary_key=True, index=True)
+    username = Column(String, unique=True)
+    hashed_password = Column(String)
+
 class JobListing(Base):
     __tablename__ = "job_listings"
 
@@ -14,4 +21,3 @@ class JobListing(Base):
     date_posted = Column(Date)
     number_of_positions = Column(Integer)
     job_ad_link = Column(String)
-
