@@ -35,7 +35,9 @@ async def user(user: user_dependency, db: db_dependency):
 
 
 @app.post("/newjob")
-async def add_job(request:JobSchema, db: db_dependency):
+async def add_job(user: user_dependency, request:JobSchema, db: db_dependency):
+    if user is None:
+        raise HTTPException(status_code=401, detail="Authentication Failed")
     job = JobListing(company_name=request.company_name, position=request.position, location=request.location, application_deadline=request.application_deadline, date_posted=request.date_posted, number_of_positions=request.number_of_positions, job_ad_link=request.job_ad_link)
     db.add(job)
     db.commit()
