@@ -4,9 +4,15 @@
 
 
 ## Virtual Environment setup
+run this in the project directory
 ```bash
 python3 -m venv .venv
 ```
+activate the virtual environment
+```bash
+source .venv/bin/activate
+```
+
 ## Dependencys
 
 install all the dependencys in your virtual environment
