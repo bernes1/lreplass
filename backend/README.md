@@ -35,4 +35,5 @@ openssl rand -hex 32
   // .env
   SECRET_KEY="<Secret_key>"
   ALGORITHM = "HS256"
+  DATABASE_URL = "postgresql://user:password@postgresserver/db"
 ```
