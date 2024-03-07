@@ -45,6 +45,11 @@ async def add_job(user: user_dependency, request:JobSchema, db: db_dependency):
     return job
 
 
+@app.get("/jobs")
+async def get_jobs(db: db_dependency):
+    positions = db.query(JobListing).all()
+    return positions
+
 @app.get("/jobs/{position}")
 async def get_jobs(position, db: db_dependency):
     positions = db.query(JobListing).filter(JobListing.position == position).all()
