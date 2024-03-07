@@ -36,4 +36,9 @@ openssl rand -hex 32
   SECRET_KEY="<Secret_key>"
   ALGORITHM = "HS256"
   DATABASE_URL = "postgresql://user:password@postgresserver/db"
+  POSTGRES_USER = "postgres"
+  POSTGRES_PASSWORD = "postgres"
+  POSTGRES_SERVER = "localhost"
+  POSTGRES_PORT = "5432"
+  POSTGRES_DB = "lreplass"
 ```
