@@ -28,3 +28,4 @@ async def get_jobs(db: db_dependency):
 @router.get("/jobs/{position}")
 async def get_jobs(position, db: db_dependency):
     positions = db.query(JobListing).filter(JobListing.position == position).all()
+    return positions
