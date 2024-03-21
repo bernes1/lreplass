@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, Date
-from database import Base
-from schemas import JobSchema
+from database.configuration import Base
+from schemas.schemas import JobSchema
 
 
 class Users(Base):

@@ -5,12 +5,14 @@ from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 from starlette import status
-from database import SessionLocal
-from models import Users
+from database.configuration import SessionLocal
+from models.models import Users
 from passlib.context import CryptContext
 from fastapi.security import OAuth2PasswordRequestForm, OAuth2PasswordBearer
 from jose import jwt, JWTError
+from dependencies import db_dependency 
 from dotenv import load_dotenv
+
 
 router = APIRouter(
     prefix='/auth',
@@ -33,15 +35,6 @@ class Token(BaseModel):
     access_token: str
     token_type: str
 
-def get_db():
-    try:
-        db = SessionLocal()
-        yield db 
-    finally:
-        db.close()
-
-
-db_dependency = Annotated[Session, Depends(get_db)]
 
 
 @router.post("/", status_code=status.HTTP_201_CREATED)
@@ -59,7 +52,7 @@ async def login_for_access_token(form_data: Annotated[OAuth2PasswordRequestForm,
     
     return {"access_token": token, "token_type": "bearer"}
 
-def authenticate_user(username: str, password:str,db):
+def authenticate_user(username: str, password:str, db):
     user =  db.query(Users).filter(Users.username == username).first()
     if not user:
         return False
