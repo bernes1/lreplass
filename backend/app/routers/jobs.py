@@ -23,17 +23,17 @@ async def get_jobs(db: db_dependency):
     positions = db.query(JobListing).all()
     return positions
 
-@router.get("/jobs/{position}")
+@router.get("/position/{position}")
 async def get_jobs(position, db: db_dependency):
     positions = db.query(JobListing).filter(JobListing.position == position).all()
     return positions
 
-@router.get("/jobs/{company_name}")
+@router.get("/company/{company_name}")
 async def get_jobs(company_name, db: db_dependency):
     positions = db.query(JobListing).filter(JobListing.company_name == company_name).all()
     return positions
 
-@router.get("/jobs/{location}")
+@router.get("/location/{location}")
 async def get_jobs(location, db: db_dependency):
     positions = db.query(JobListing).filter(JobListing.location == location).all()
     return positions
