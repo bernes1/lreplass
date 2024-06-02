@@ -41,7 +41,6 @@ export default {
   </div>  
 
 <Footer></Footer>
-</div>
 </template>
 
 
