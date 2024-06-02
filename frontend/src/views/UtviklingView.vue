@@ -19,7 +19,7 @@ export default {
 
 <template>
   <div class="justify-center text-center">
-    <h1 class="font-bold">Dette er it IT-Utvikling</h1>
+    <h1 class="font-bold">IT-Utvikling</h1>
   </div>
 
   <div
