@@ -3,7 +3,6 @@ import dotenv from 'dotenv'
 const { Pool } = pg
 
 dotenv.config({path: '../../vars/.env'})
-console.log(process.env)
 
 export const pool = new Pool({
   user: process.env.POSTGRES_USER, 
