@@ -37,8 +37,8 @@ export default {
       :numberOfPositions="job.numberOfPositions"
       :JobAdLink="job.JobAdLink"
     />
-  </div>  
-
+  </div>
+  </div>
 <Footer></Footer>
   </div>
 </template>
