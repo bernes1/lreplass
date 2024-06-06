@@ -40,6 +40,7 @@ export default {
   </div>
   </div>
 <Footer></Footer>
+  </div>
 </template>
 
 
