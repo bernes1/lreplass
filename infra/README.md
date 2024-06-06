@@ -21,7 +21,7 @@ Create a .env file in vars folder with the following contents
 ```
   // vars/.env
   POSTGRES_USER=postgres
-  POSTGRES_PASSWORD=postgres
+  POSTGRES_PASSWORD='postgres'
   POSTGRES_SERVER=localhost
   POSTGRES_PORT=5432
   POSTGRES_DB=lreplass
