@@ -11,8 +11,8 @@
         :companyName="job.company_name"
         :position="job.position"
         :location="job.location"
-        :applicationDeadline="job.application_deadline"
-        :datePosted="job.date_posted"
+        :applicationDeadline="formatDate(job.application_deadline)"
+        :datePosted="formatDate(job.date_posted)"
         :numberOfPositions="job.number_of_positions"
         :JobAdLink="job.job_ad_link"
       />
@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import JobCard from '../components/JobCard.vue';
 import Footer from '@/components/Footer.vue';
 
@@ -41,18 +42,16 @@ export default {
   methods: {
     async fetchJobs() {
       try {
-        const response = await fetch('http://localhost:3000/api/v1/drift');
-        if (!response.ok) {
-          throw new Error('Network response was not ok ' + response.statusText);
-        }
-        const data = await response.json();
-        
-        this.jobList = data;
-        console.log('Updated jobList:', this.jobList);
-         
+        const response = await axios.get('http://localhost:3000/api/v1/drift');
+        this.jobList = response.data;
       } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
       }
+    },
+    formatDate(dateString) {
+      const date = new Date(dateString);
+      const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
+      return date.toLocaleDateString('nb-NO', options);
     }
   }
 };
