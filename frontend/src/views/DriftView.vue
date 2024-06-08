@@ -11,6 +11,7 @@
         :companyName="job.company_name"
         :position="job.position"
         :location="job.location"
+
         :applicationDeadline="formatDate(job.application_deadline)"
         :datePosted="formatDate(job.date_posted)"
         :numberOfPositions="job.number_of_positions"
@@ -22,6 +23,7 @@
 </template>
 
 <script>
+
 import axios from 'axios';
 import JobCard from '../components/JobCard.vue';
 import Footer from '@/components/Footer.vue';
