@@ -42,7 +42,7 @@ export default {
   methods: {
     async fetchJobs() {
       try {
-        const response = await axios.get('http://localhost:3000/api/v1/utvikling');
+        const response = await axios.get('utvikling');
         this.jobList = response.data;
       } catch (error) {
         console.error('There was a problem with the fetch operation:', error);

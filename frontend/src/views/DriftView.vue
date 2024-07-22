@@ -25,7 +25,7 @@
 <script>
 
 import axios from 'axios';
-import JobCard from '../components/JobCard.vue';
+import JobCard from '@/components/JobCard.vue';
 import Footer from '@/components/Footer.vue';
 
 export default {
@@ -44,8 +44,8 @@ export default {
   methods: {
     async fetchJobs() {
       try {
-        const response = await axios.get('http://localhost:3000/api/v1/drift');
-        this.jobList = response.data;
+        const response = await axios.get('drift');
+        this.jobList = response.data.data;
       } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
       }
