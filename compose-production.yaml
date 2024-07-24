@@ -43,5 +43,6 @@ volumes:
   pgdata:
 
 networks:
-  webnet:
-   external: true
+  default:
+    external: 
+      name: webnet
