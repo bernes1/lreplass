@@ -26,6 +26,11 @@ Create a .env file in vars folder with the following contents
   POSTGRES_PORT=5432
   POSTGRES_DB=lreplass
 ```
+``` 
+  // frontend/.env 
+  VITE_BASEURL=http://localhost:3000/api/v1/
+```
+
 After you have added the .env file to the vars folder run this comand in the project root folder.
 
 ```shell

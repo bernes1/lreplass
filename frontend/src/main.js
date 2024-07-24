@@ -4,7 +4,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 
-axios.defaults.baseURL = 'http://localhost:3000/api/v1/'
+axios.defaults.baseURL = import.meta.env.VITE_BASEURL || 'http://localhost:3000/api/v1/'
 
 const app = createApp(App)
 
