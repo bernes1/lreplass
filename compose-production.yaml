@@ -30,7 +30,7 @@ services:
     environment:
       - VITE_BASEURL=api.lreplass.no
     ports:
-      - "8080:80"
+      - "8083:80"
     depends_on:
       - backend
 volumes:
