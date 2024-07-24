@@ -24,7 +24,7 @@ services:
     environment:
       DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres/${POSTGRES_DB}
     ports:
-      - "8000:8000"
+      - "3001:3001"
  frontend:
     build: ./frontend/
     environment:
