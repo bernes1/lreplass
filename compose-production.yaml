@@ -19,6 +19,7 @@ services:
       retries: 5
   backend:
     build: ./backend/
+    container_name: lreplass-backend
     depends_on:
       - postgres
     environment:
@@ -29,6 +30,7 @@ services:
       - "3001:3001"
   frontend:
     build: ./frontend/
+    container_name: lreplass-frontend
     environment:
       - VITE_BASEURL=api.lreplass.no
     networks:
