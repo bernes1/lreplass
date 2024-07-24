@@ -24,13 +24,13 @@ services:
     environment:
       DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres/${POSTGRES_DB}
     ports:
-      - "8000:8000"
+      - "3001:3001"
  frontend:
     build: ./frontend/
     environment:
       - VITE_BASEURL=api.lreplass.no
     ports:
-      - "8080:80"
+      - "8083:80"
     depends_on:
       - backend
 volumes:
