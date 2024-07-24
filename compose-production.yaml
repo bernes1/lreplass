@@ -1,37 +1,45 @@
 services:
- postgres: 
-   image: postgres:alpine
-   restart: always
-   environment:
-    LC_ALL: C.UTF-8
-    POSTGRES_USER: ${POSTGRES_USER}
-    POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-    POSTGRES_DB: ${POSTGRES_DB}
-   volumes:
-     - pgdata:/var/lib/postgresql/data
-     - ./backend/db/init.sql:/docker-entrypoint-initdb.d/init.sql
-   ports: 
-   - "5432:5432"
-   healthcheck:
+  postgres:
+    image: postgres:alpine
+    restart: always
+    environment:
+      LC_ALL: C.UTF-8
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./backend/db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+    healthcheck:
       test: ["CMD", "pg_isready"]
       interval: 10s
       timeout: 5s
       retries: 5
- backend:
+  backend:
     build: ./backend/
     depends_on:
       - postgres
     environment:
       DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres/${POSTGRES_DB}
+    networks:
+      - webnet
     ports:
       - "3001:3001"
- frontend:
+  frontend:
     build: ./frontend/
     environment:
       - VITE_BASEURL=api.lreplass.no
+    networks:
+      - webnet
     ports:
       - "8083:80"
     depends_on:
       - backend
 volumes:
   pgdata:
+
+networks:
+  webnet:
+  external: true
