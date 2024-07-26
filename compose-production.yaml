@@ -17,15 +17,21 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+
   backend:
     build: ./backend/
     container_name: lreplass-backend
     depends_on:
       - postgres
     environment:
-      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres/${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_SERVER: ${POSTGRES_SERVER}
+      POSTGRES_PORT: ${POSTGRES_SERVER}
+      POSTGRES_DB: ${POSTGRES_DB}
     networks:
       - webnet
+      - default
     ports:
       - "3001:3001"
   frontend:
@@ -43,5 +49,6 @@ volumes:
   pgdata:
 
 networks:
-  webnet:
-   external: true
+  default:
+    external: 
+      name: webnet
