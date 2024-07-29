@@ -23,7 +23,7 @@
 
 <script>
 import axios from 'axios';
-import JobCard from '../components/JobCard.vue';
+import JobCard from '@/components/JobCard.vue';
 import Footer from '@/components/Footer.vue';
 
 export default {
