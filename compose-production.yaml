@@ -18,7 +18,7 @@ services:
       timeout: 5s
       retries: 5
     networks:
-     - default
+     - webnet
 
   backend:
     build: ./backend/
