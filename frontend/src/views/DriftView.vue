@@ -38,7 +38,8 @@ export default {
   },
   data() {
     return {
-      jobList: [] // Initialize as an empty array
+      jobList: [], // Initialize as an empty array
+      errorMessage: '' // Initialize error message as an empty string
     };
   },
   created() {
