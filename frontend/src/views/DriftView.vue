@@ -3,6 +3,9 @@
     <div class="justify-center text-center">
       <h1 class="font-bold text-2xl">IT-Drift</h1>
     </div>
+    <div v-if="errorMessage" class="text-center text-red-500">
+      <p>{{ errorMessage }}</p>
+    </div>
     <div class="justify-center grid grid-flow-row-dense grid-cols-auto grid-rows-auto md:grid-cols-3 md:grid-rows-3 mb-10 mt-15">
       <JobCard
         v-for="job in jobList"
@@ -46,7 +49,9 @@ export default {
       try {
         const response = await axios.get('drift');
         this.jobList = response.data.data;
+        this.errorMessage = '';
       } catch (error) {
+        this.errorMessage = 'There was a problem fetching the job listings. Please try again later.';
         console.error('There was a problem with the fetch operation:', error);
       }
     },
