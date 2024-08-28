@@ -50,7 +50,7 @@ export default {
         this.jobList = response.data.data;
         this.errorMessage = ''; 
       } catch (error) {
-        this.errorMessage = 'There was a problem fetching the job listings. Please try again later.';
+        this.errorMessage = 'Det oppstod ett problem. Prøv igjen senere.';
         console.error('There was a problem with the fetch operation:', error);
       }
     },
