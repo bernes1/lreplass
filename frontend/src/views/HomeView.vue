@@ -8,6 +8,7 @@ import Footer from '@/components/Footer.vue';
     <div class="text-center">
       <h1 class="font-bold text-2xl">Velkomen til Lreplass</h1>
       <p>Ett sted og lete etter læreplasser</p>
+      <h1>errrrrr</h1>
     </div>
   </main>
   <Footer></Footer>
