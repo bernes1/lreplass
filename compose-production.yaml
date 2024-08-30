@@ -1,6 +1,7 @@
 services:
   postgres:
     image: postgres:alpine
+    container_name: lreplass-db
     restart: always
     environment:
       LC_ALL: C.UTF-8
