@@ -1,13 +1,12 @@
 <script>
 import Joblisting from '@/components/JobListing.vue'
-</script>
-
-<template>
-  <Joblisting apiUrl="utvikling" pageName="IT-Utvikling" />
-
-  export default {
+export default {
     components: {
         Joblisting
     }
 };
+</script>
+
+<template>
+  <Joblisting apiUrl="utvikling" pageName="IT-Utvikling" />
 </template>
