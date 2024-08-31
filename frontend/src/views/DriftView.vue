@@ -4,4 +4,9 @@
 
 <script>
 import Joblisting from '@/components/JobListing.vue'
+export default {
+    components: {
+        Joblisting
+    }
+};
 </script>
